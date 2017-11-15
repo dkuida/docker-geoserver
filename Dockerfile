@@ -10,7 +10,7 @@ RUN apt-get install unzip
 
 
 WORKDIR /opt
-RUN wget http://apache.rediris.es/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.0.M26.zip
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.0.M26/bin/apache-tomcat-9.0.0.M26.zip
 
 RUN unzip apache-tomcat-9.0.0.M26
 RUN ln -s apache-tomcat-9.0.0.M26 tomcat-latest
