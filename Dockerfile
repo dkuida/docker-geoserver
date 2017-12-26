@@ -1,9 +1,9 @@
-FROM dkuida/oracle-java8 
-MAINTAINER Dan Kuida < dan@kuida.org > 
-ENV REFRESHED_AT 2017-08-10 
+FROM dkuida/oracle-java8
+MAINTAINER Dan Kuida < dan@kuida.org >
+ENV REFRESHED_AT 2017-08-10
 
 
-RUN useradd -r tomcat9 --shell /bin/false 
+RUN useradd -r tomcat9 --shell /bin/false
 
 
 RUN apt-get install unzip
@@ -20,13 +20,14 @@ RUN chown -hR tomcat9: tomcat-latest apache-tomcat-9.0.0.M26
 
 RUN chmod +x tomcat-latest/bin/catalina.sh
 
-ENV CATALINA_HOME /opt/tomcat-latest 
-ENV CATALINA_PID $CATALINA_HOME/bin/catalina.pid 
-ENV CATALINA_SH /opt/tomcat-latest/bin/catalina.sh 
-ENV CATALINA_TMPDIR /tmp/tomcat9-tomcat9-tmp 
-ENV GEOSERVER_DATA_DIR /mnt/geoserver-data 
+ENV CATALINA_HOME /opt/tomcat-latest
+ENV CATALINA_PID $CATALINA_HOME/bin/catalina.pid
+ENV CATALINA_SH /opt/tomcat-latest/bin/catalina.sh
+ENV CATALINA_TMPDIR /tmp/tomcat9-tomcat9-tmp
+ENV GEOSERVER_DATA_DIR /mnt/geoserver-data
 ENV GEOSERVER_LOG_PATH /mnt/logs
 ENV GEOSERVER_LOG_LOCATION $GEOSERVER_LOG_PATH/geoserver.log
+ENV GEOSERVER_TMP_DIR /tmp/tomcat9-tomcat9-tmp
 RUN mkdir -p $ CATALINA_TMPDIR
 
 
@@ -34,11 +35,13 @@ RUN mkdir $GEOSERVER_DATA_DIR
 
 RUN mkdir /mnt/logs
 RUN mkdir /mnt/ortophoto
+RUN mkdir $GEOSERVER_TMP_DIR
 
 
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_DATA_DIR
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_LOG_PATH
 RUN chown -Rf tomcat9:tomcat9 /mnt/ortophoto
+RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_TMP_DIR
 
 
 USER tomcat9
@@ -87,4 +90,3 @@ CMD [ "/opt/tomcat-latest/bin/catalina.sh", "run" ]
 
 
 
- 
