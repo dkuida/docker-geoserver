@@ -38,6 +38,7 @@ RUN mkdir /mnt/ortophoto
 RUN mkdir $GEOSERVER_TMP_DIR
 
 
+RUN chown -Rf tomcat9:tomcat9 /mnt/logs
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_DATA_DIR
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_LOG_PATH
 RUN chown -Rf tomcat9:tomcat9 /mnt/ortophoto
@@ -61,13 +62,9 @@ RUN unzip webapps/geoserver.war -d $CATALINA_HOME/webapps/geoserver
 
 WORKDIR /tmp
 
-#RUN unzip geoserver-2.11.2-gdal-plugin.zip -d $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
 RUN unzip geoserver-2.11.2-pyramid-plugin.zip -d $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
-#RUN unzip geoserver-2.11.2-vectortiles-plugin.zip -d $CATALINA_HOME/webapps/geoserver/WEB-INF/lib/
 
 
-#RUN export GEOSERVER_LOG_LOCATION=/mnt/logs/geoserver.log
-#RUN export GEOSERVER_DATA_DIR=/mnt/geoserver-data
 
 USER tomcat9
 
