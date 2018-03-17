@@ -380,6 +380,10 @@
         <load-on-startup>5</load-on-startup>
     </servlet>
 -->
+<context-param>
+   <param-name>GEOWEBCACHE_CACHE_DIR</param-name>
+   <param-value>/mnt/cache</param-value>
+</context-param>
 
 
   <!-- ================ Built In Servlet Mappings ========================= -->
