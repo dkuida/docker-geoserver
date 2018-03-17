@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
 CONTAINER="geo"
 IMAGE="dkuida/geoserver"
 docker build -t ${IMAGE} .
+set +e
 docker stop ${CONTAINER}
 docker rm ${CONTAINER}
 docker run -p 8081:8080 --name=geo \
