@@ -81,7 +81,7 @@ RUN rm -rf /opt/tomcat-latest/webapps/geoserver/data/*
 
 #enable CORS
 COPY web.xml /opt/tomcat-latest/webapps/geoserver/WEB-INF/
-RUN chown -Rf tomcat9:tomcat9 /opt/tomcat-latest/webapps/geoserver/WEB-INF/web.xml
+RUN chown  tomcat9:tomcat9 /opt/tomcat-latest/webapps/geoserver/WEB-INF/web.xml
 
 
 
