@@ -70,7 +70,7 @@ RUN unzip geoserver-2.11.2-pyramid-plugin.zip -d $CATALINA_HOME/webapps/geoserve
 
 USER tomcat9
 
-VOLUME ["/mnt/geoserver-data", "/mnt/logs/", "/mnt/ortophoto"]
+VOLUME ["/mnt/geoserver-data", "/mnt/logs/", "/mnt/ortophoto", "/mnt/cache"]
 
 EXPOSE 8080
 
@@ -80,7 +80,7 @@ RUN rm -rf /opt/tomcat-latest/webapps/geoserver/data/*
 
 
 #enable CORS
-COPY web.xml /opt/tomcat-latest/conf/web.xml
+COPY web.xml //opt/tomcat-latest/webapps/geoserver/WEB-INF/
 
 
 
