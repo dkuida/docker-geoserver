@@ -35,7 +35,7 @@ RUN mkdir $GEOSERVER_DATA_DIR
 
 RUN mkdir /mnt/logs
 RUN mkdir /mnt/ortophoto
-RUN mkdir /mnt/cache
+#RUN mkdir /mnt/cache
 RUN mkdir $GEOSERVER_TMP_DIR
 
 
@@ -43,7 +43,7 @@ RUN chown -Rf tomcat9:tomcat9 /mnt/logs
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_DATA_DIR
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_LOG_PATH
 RUN chown -Rf tomcat9:tomcat9 /mnt/ortophoto
-RUN chown -Rf tomcat9:tomcat9 /mnt/cache
+#RUN chown -Rf tomcat9:tomcat9 /mnt/cache
 RUN chown -Rf tomcat9:tomcat9 $GEOSERVER_TMP_DIR
 
 
