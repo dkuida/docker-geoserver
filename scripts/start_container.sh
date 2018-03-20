@@ -11,6 +11,6 @@ docker run -p 8081:8080 --name=geo \
 -v /mnt/geoserver-cache:/mnt/cache \
 -v /mnt/geoserver/logs:/mnt/logs  \
 -v /mnt/ortophoto:/mnt/ortophoto  \
--v ${PWD}/web.xml:/opt/tomcat-latest/webapps/geoserver/WEB-INF/web.xml  \
+-v /mnt/geoserver-cache:/mnt/geoserver-data/gwc  \
 --network=geo_nw -d ${IMAGE}
 
