@@ -80,7 +80,7 @@ RUN rm -rf /opt/tomcat-latest/webapps/geoserver/data/*
 
 
 #enable CORS
-COPY web.xml //opt/tomcat-latest/webapps/geoserver/WEB-INF/
+COPY web.xml /opt/tomcat-latest/webapps/geoserver/WEB-INF/
 
 
 
