@@ -6,7 +6,7 @@ docker build -t ${IMAGE} .
 set +e
 docker stop ${CONTAINER}
 docker rm ${CONTAINER}
-docker run -p 8081:8080 --name=geo \
+docker run -p 8081:8080 --name=${CONTAINER} \
 -v /mnt/geoserver/data:/mnt/geoserver-data \
 -v /mnt/geoserver-cache:/mnt/cache \
 -v /mnt/geoserver/logs:/mnt/logs  \
